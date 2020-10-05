@@ -1,0 +1,29 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Excel Viewer</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<app-excel-uploader
+  (fileReadCompletedEvent)="onFileReadCompleted($event)"
+  (clearFileData)="clearData($event)"
+>
+</app-excel-uploader>
+<div class="row" cdkDropListGroup>
+  <app-multi-drag-drop [items]="ColumnDataSource" class="side" type="source">
+    <ng-template let-item>
+      <p class="side-items">{{ item }}</p>
+    </ng-template>
+  </app-multi-drag-drop>
+  <app-multi-drag-drop
+    [items]="TableDataSource"
+    class="main"
+    type="destination"
+    (itemsAdded)="tableDataSourceChanged($event)"
+  >
+    <ng-template let-item>
+      <td *ngFor="let col of item | keyvalue">
+        {{ col.value | checkdate }}
+      </td>
+    </ng-template>
+  </app-multi-drag-drop>
+</div>

@@ -1,0 +1,11 @@
+<p style="text-align: center;">
+<button (click)="fileInput.click()" mat-stroked-button color="primary">
+    <mat-icon>cloud_upload</mat-icon>
+    <span style="padding-left: 10px;">Upload a XLSX File</span>
+    <input #fileInput type="file" (change)="onFileInput($event)" style="display:none;" multiple="false" />
+</button>
+<button (click)="clearClick($event)" mat-stroked-button class="clearButton">
+    <mat-icon>clear_all</mat-icon>
+    <span style="padding-left: 10px;">Clear</span>
+  </button>
+</p>

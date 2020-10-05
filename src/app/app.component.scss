@@ -1,0 +1,29 @@
+.row {
+  display: flex;
+}
+
+.side {
+  flex: 20%;
+  padding: 10px;
+  max-height: 100px;
+}
+
+.main {
+  flex: 80%;
+  padding: 10px;
+}
+
+.side-items {
+  padding: 2px 0px 2px 5px;
+  margin-left: 2px;
+}
+
+td {
+  border: 1px solid #ddd;
+  text-align: left;
+  padding: 6px;
+}
+
+.clearButton {
+  float: right;
+}
